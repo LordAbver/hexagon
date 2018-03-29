@@ -21,12 +21,10 @@ public class BattleUI : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            if(_mode == Modes.Default)
-                DoSelection();
-            else if(_selectedUnit && _mode == Modes.Move)
-            {
+            if(_selectedUnit && _mode == Modes.Move)
                 DoMove();
-            } 
+
+            DoSelection();
         }
         else if (_selectedUnit && _mode == Modes.Move)
         {
