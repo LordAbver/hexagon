@@ -1,0 +1,1555 @@
+fileFormatVersion: 2
+guid: 10710220c5d6ec9419c03705f69e1898
+timeCreated: 1520583190
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: boss_0
+    21300002: boss_1
+    21300004: boss_2
+    21300006: boss_3
+    21300008: boss_4
+    21300010: boss_5
+    21300012: boss_6
+    21300014: boss_7
+    21300016: boss_8
+    21300018: boss_9
+    21300020: boss_10
+    21300022: boss_11
+    21300024: boss_12
+    21300026: boss_13
+    21300028: boss_14
+    21300030: boss_15
+    21300032: boss_16
+    21300034: boss_17
+    21300036: boss_18
+    21300038: boss_19
+    21300040: boss_20
+    21300042: boss_21
+    21300044: boss_22
+    21300046: boss_23
+    21300048: boss_24
+    21300050: boss_25
+    21300052: boss_26
+    21300054: boss_27
+    21300056: boss_28
+    21300058: boss_29
+    21300060: boss_30
+    21300062: boss_31
+    21300064: boss_32
+    21300066: boss_33
+    21300068: boss_34
+    21300070: boss_35
+    21300072: boss_36
+    21300074: boss_37
+    21300076: boss_38
+    21300078: boss_39
+    21300080: boss_40
+    21300082: boss_41
+    21300084: boss_42
+    21300086: boss_43
+    21300088: boss_44
+    21300090: boss_45
+    21300092: boss_46
+    21300094: boss_47
+    21300096: boss_48
+    21300098: boss_49
+    21300100: boss_50
+    21300102: boss_51
+    21300104: boss_52
+    21300106: boss_53
+    21300108: boss_54
+    21300110: boss_55
+    21300112: boss_56
+    21300114: boss_57
+    21300116: boss_58
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss_0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1508
+        width: 648
+        height: 656
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_1
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 2027
+        width: 76
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_2
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 1801
+        width: 250
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_3
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1888
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_4
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 1837
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_5
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 1686
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_6
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 1651
+        width: 148
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_7
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1676
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_8
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1666
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_9
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 1651
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_10
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1614
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_11
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 1550
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_12
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 1533
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_13
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 1495
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_14
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 1488
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_15
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 811
+        width: 565
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_16
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 1346
+        width: 133
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_17
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 1414
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_18
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 1408
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_19
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 758
+        width: 652
+        height: 632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_20
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 1338
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_21
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 1329
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_22
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 1321
+        width: 35
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_23
+      rect:
+        serializedVersion: 2
+        x: 2096
+        y: 1328
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_24
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 1316
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_25
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 1292
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_26
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 1276
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_27
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 1243
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_28
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 1051
+        width: 160
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_29
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 1220
+        width: 103
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_30
+      rect:
+        serializedVersion: 2
+        x: 1924
+        y: 1173
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_31
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1092
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_32
+      rect:
+        serializedVersion: 2
+        x: 1869
+        y: 1012
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_33
+      rect:
+        serializedVersion: 2
+        x: 1862
+        y: 1001
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_34
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 995
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_35
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 985
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_36
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 923
+        width: 147
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_37
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 885
+        width: 63
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_38
+      rect:
+        serializedVersion: 2
+        x: 2189
+        y: 947
+        width: 78
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_39
+      rect:
+        serializedVersion: 2
+        x: 2152
+        y: 877
+        width: 133
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_40
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 842
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_41
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 753
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_42
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 756
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_43
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 751
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_44
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 633
+        width: 197
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_45
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 739
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_46
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 743
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_47
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 732
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_48
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 736
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_49
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 733
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_50
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 707
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_51
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 724
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_52
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 698
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_53
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 665
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_54
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 664
+        width: 5
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_55
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 4
+        width: 628
+        height: 632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_56
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 3
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_57
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 0
+        width: 14
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: boss_58
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 0
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -900.23193, y: -1092.0665}
+      - {x: -906.4404, y: -1097.0333}
+      - {x: -906.4404, y: -1102}
+      - {x: -892.78174, y: -1102}
+      - {x: -884.08984, y: -1098.2749}
+      - {x: -884.08984, y: -1092.0665}
+    - - {x: -840.6304, y: -1092.0665}
+      - {x: -840.6304, y: -1099.5166}
+      - {x: -836.9053, y: -1102}
+      - {x: -813.313, y: -1102}
+      - {x: -813.313, y: -1095.7916}
+      - {x: -829.4551, y: -1092.0665}
+    - - {x: -882.84814, y: -1090.8248}
+      - {x: -882.84814, y: -1098.2749}
+      - {x: -841.8721, y: -1098.2749}
+      - {x: -841.8721, y: -1090.8248}
+    - - {x: -799.6543, y: -1041.1572}
+      - {x: -704.04346, y: -993.97296}
+      - {x: -691.62646, y: -981.5561}
+      - {x: -668.0342, y: -939.3386}
+      - {x: -644.4419, y: -934.3718}
+      - {x: -612.1577, y: -903.3296}
+      - {x: -597.2573, y: -909.538}
+      - {x: -593.5322, y: -869.80396}
+      - {x: -610.916, y: -841.2451}
+      - {x: -602.2241, y: -754.3268}
+      - {x: -573.66504, y: -697.20905}
+      - {x: -553.79785, y: -651.2665}
+      - {x: -547.58936, y: -621.46594}
+      - {x: -547.58936, y: -523.37244}
+      - {x: -548.83105, y: -509.7138}
+      - {x: -560.00635, y: -501.02197}
+      - {x: -628.2998, y: -465.01297}
+      - {x: -646.9253, y: -463.77127}
+      - {x: -722.66895, y: -463.77127}
+      - {x: -784.7539, y: -471.22144}
+      - {x: -864.22266, y: -463.77127}
+      - {x: -895.26514, y: -463.77127}
+      - {x: -897.74854, y: -471.22144}
+      - {x: -917.6157, y: -528.3392}
+      - {x: -946.1748, y: -545.72284}
+      - {x: -947.4165, y: -587.9403}
+      - {x: -1031.852, y: -602.8406}
+      - {x: -1045.5107, y: -640.0913}
+      - {x: -1074.0698, y: -652.5082}
+      - {x: -1106.354, y: -637.6079}
+      - {x: -1121.2544, y: -668.65015}
+      - {x: -1162.2305, y: -677.342}
+      - {x: -1174.6475, y: -693.48395}
+      - {x: -1179.6143, y: -749.36005}
+      - {x: -1179.6143, y: -790.3358}
+      - {x: -1168.439, y: -802.7527}
+      - {x: -1137.3965, y: -812.6862}
+      - {x: -1112.5625, y: -859.8704}
+      - {x: -1067.8613, y: -890.9127}
+      - {x: -1066.6196, y: -933.1302}
+      - {x: -1034.3354, y: -967.89746}
+      - {x: -1038.0605, y: -1008.8733}
+      - {x: -1014.4682, y: -1033.707}
+      - {x: -998.3262, y: -1084.6163}
+      - {x: -978.459, y: -1084.6163}
+      - {x: -923.8242, y: -1067.2327}
+      - {x: -853.04736, y: -1063.5077}
+      - {x: -829.4551, y: -1053.5741}
+    - - {x: -928.791, y: -478.67157}
+      - {x: -931.2744, y: -481.15494}
+      - {x: -931.2744, y: -486.1217}
+      - {x: -928.791, y: -488.60507}
+      - {x: -925.0659, y: -488.60507}
+      - {x: -922.5825, y: -486.1217}
+      - {x: -922.5825, y: -481.15494}
+      - {x: -925.0659, y: -478.67157}
+    - - {x: 646.9253, y: -349.5358}
+      - {x: 587.3237, y: -338.36057}
+      - {x: 541.38086, y: -338.36057}
+      - {x: 526.48047, y: -352.01917}
+      - {x: 526.48047, y: -376.85297}
+      - {x: 568.69824, y: -457.56284}
+      - {x: 594.7739, y: -471.22144}
+      - {x: 670.5176, y: -471.22144}
+      - {x: 704.04346, y: -433.9707}
+      - {x: 713.97705, y: -407.89523}
+      - {x: 713.97705, y: -361.9527}
+    - - {x: -752.4697, y: -421.5538}
+      - {x: -756.1948, y: -422.7955}
+      - {x: -756.1948, y: -440.17917}
+      - {x: -751.228, y: -440.17917}
+      - {x: -747.5029, y: -438.93747}
+      - {x: -747.5029, y: -422.7955}
+      - {x: -748.7446, y: -421.5538}
+    - - {x: -947.4165, y: -420.31213}
+      - {x: -951.1416, y: -420.31213}
+      - {x: -952.3833, y: -421.5538}
+      - {x: -952.3833, y: -431.48734}
+      - {x: -948.6582, y: -438.93747}
+      - {x: -944.9331, y: -438.93747}
+      - {x: -942.4497, y: -437.6958}
+      - {x: -942.4497, y: -429.00397}
+      - {x: -943.6914, y: -421.5538}
+    - - {x: -782.2705, y: -358.22763}
+      - {x: -782.2705, y: -363.19437}
+      - {x: -779.7871, y: -365.67776}
+      - {x: -754.9531, y: -406.65353}
+      - {x: -747.5029, y: -406.65353}
+      - {x: -747.5029, y: -381.81973}
+      - {x: -771.0952, y: -358.22763}
+    - - {x: -952.3833, y: -374.3696}
+      - {x: -952.3833, y: -397.9617}
+      - {x: -939.9663, y: -397.9617}
+      - {x: -879.12305, y: -345.8107}
+      - {x: -879.12305, y: -338.36057}
+      - {x: -906.4404, y: -338.36057}
+      - {x: -934.9995, y: -342.08563}
+    - - {x: -789.7207, y: -353.26086}
+      - {x: -792.2041, y: -355.74423}
+      - {x: -792.2041, y: -358.22763}
+      - {x: -789.7207, y: -360.711}
+      - {x: -785.9956, y: -360.711}
+      - {x: -783.5122, y: -358.22763}
+      - {x: -783.5122, y: -355.74423}
+      - {x: -785.9956, y: -353.26086}
+    - - {x: -820.7632, y: -338.36057}
+      - {x: -830.6968, y: -338.36057}
+      - {x: -831.9385, y: -342.08563}
+      - {x: -831.9385, y: -344.56903}
+      - {x: -822.0049, y: -350.77747}
+      - {x: -807.1045, y: -353.26086}
+      - {x: -799.6543, y: -353.26086}
+      - {x: -798.4126, y: -352.01917}
+      - {x: -798.4126, y: -347.0524}
+      - {x: -808.3462, y: -340.84396}
+    - - {x: -813.313, y: -328.42706}
+      - {x: -800.896, y: -323.4603}
+      - {x: -699.07666, y: -343.32733}
+      - {x: -640.7168, y: -340.84396}
+      - {x: -613.3994, y: -330.91043}
+      - {x: -567.45654, y: -289.93466}
+      - {x: -563.73145, y: -216.67494}
+      - {x: -577.39014, y: -147.14029}
+      - {x: -597.2573, y: -98.71437}
+      - {x: -603.4658, y: -62.705353}
+      - {x: -602.2241, y: -0.6208451}
+      - {x: -562.48975, y: 121.06479}
+      - {x: -552.55615, y: 159.55719}
+      - {x: -552.55615, y: 184.39099}
+      - {x: -563.73145, y: 227.85014}
+      - {x: -583.59863, y: 258.8924}
+      - {x: -608.4326, y: 277.51776}
+      - {x: -629.5415, y: 288.69296}
+      - {x: -651.8921, y: 289.93466}
+      - {x: -715.21875, y: 289.93466}
+      - {x: -802.1377, y: 272.551}
+      - {x: -900.23193, y: 275.03436}
+      - {x: -925.0659, y: 268.82593}
+      - {x: -930.0327, y: 247.7172}
+      - {x: -934.9995, y: 235.3003}
+      - {x: -930.0327, y: 216.67494}
+      - {x: -966.042, y: 193.08282}
+      - {x: -968.5254, y: 145.89859}
+      - {x: -1023.1601, y: 143.41522}
+      - {x: -1034.3354, y: 138.44846}
+      - {x: -1030.6104, y: 111.13127}
+      - {x: -1051.7192, y: 101.19775}
+      - {x: -1080.2783, y: 92.50592}
+      - {x: -1113.8042, y: 97.47268}
+      - {x: -1118.771, y: 92.50592}
+      - {x: -1153.5386, y: 65.188736}
+      - {x: -1173.4058, y: 76.363945}
+      - {x: -1183.3394, y: 32.90479}
+      - {x: -1174.6475, y: -18.004507}
+      - {x: -1178.3726, y: -78.84733}
+      - {x: -1193.273, y: -155.83212}
+      - {x: -1208.1733, y: -211.70818}
+      - {x: -1208.1733, y: -241.50874}
+      - {x: -1203.2065, y: -271.3093}
+      - {x: -1194.5146, y: -292.41803}
+      - {x: -1172.1641, y: -320.9769}
+      - {x: -1092.6953, y: -342.08563}
+      - {x: -1070.3447, y: -345.8107}
+      - {x: -1011.9848, y: -345.8107}
+      - {x: -962.3169, y: -342.08563}
+      - {x: -925.0659, y: -328.42706}
+      - {x: -815.7964, y: -316.01016}
+    - - {x: 531.44727, y: -322.2186}
+      - {x: 525.2388, y: -322.2186}
+      - {x: 512.8218, y: -337.1189}
+      - {x: 512.8218, y: -342.08563}
+      - {x: 519.0303, y: -342.08563}
+      - {x: 522.7554, y: -340.84396}
+      - {x: 535.17236, y: -328.42706}
+      - {x: 535.17236, y: -325.94366}
+    - - {x: 129.13672, y: -225.36676}
+      - {x: 193.70508, y: -196.80789}
+      - {x: 257.03174, y: -126.031555}
+      - {x: 274.41553, y: -116.09803}
+      - {x: 283.10742, y: -99.95606}
+      - {x: 283.10742, y: -65.188736}
+      - {x: 279.38232, y: 3.1042254}
+      - {x: 248.33984, y: 40.35493}
+      - {x: 245.85645, y: 42.83831}
+      - {x: 242.13135, y: 42.83831}
+      - {x: 234.68115, y: 35.38817}
+      - {x: 234.68115, y: 29.17972}
+      - {x: 237.16455, y: 22.971268}
+      - {x: 228.47266, y: 34.14648}
+      - {x: 248.33984, y: 58.98028}
+      - {x: 189.97998, y: 107.4062}
+      - {x: 180.04639, y: 122.30648}
+      - {x: 130.37842, y: 154.59042}
+      - {x: 121.68652, y: 200.53296}
+      - {x: 95.61084, y: 225.36676}
+      - {x: 99.33594, y: 291.17636}
+      - {x: 91.88574, y: 317.25183}
+      - {x: 69.53516, y: 320.9769}
+      - {x: -11.175293, y: 320.9769}
+      - {x: -54.634766, y: 241.50874}
+      - {x: -60.84326, y: 207.98311}
+      - {x: -96.85254, y: 196.80789}
+      - {x: -145.27881, y: 174.45747}
+      - {x: -163.9043, y: 149.62367}
+      - {x: -229.71436, y: 135.96507}
+      - {x: -224.74756, y: 114.85634}
+      - {x: -275.65723, y: 102.43944}
+      - {x: -280.62402, y: 93.74761}
+      - {x: -285.59082, y: 45.32169}
+      - {x: -285.59082, y: 0.6208451}
+      - {x: -240.88965, y: -27.938028}
+      - {x: -234.68115, y: -62.705353}
+      - {x: -229.71436, y: -68.9138}
+      - {x: -171.35449, y: -104.92282}
+      - {x: -172.59619, y: -153.34874}
+      - {x: -145.27881, y: -214.19156}
+      - {x: -144.03711, y: -243.99213}
+      - {x: -122.92822, y: -272.551}
+      - {x: -108.02783, y: -292.41803}
+      - {x: -89.40234, y: -292.41803}
+      - {x: -54.634766, y: -280.00113}
+      - {x: -24.833984, y: -292.41803}
+      - {x: -23.592285, y: -292.41803}
+      - {x: 57.118164, y: -266.34253}
+      - {x: 83.19385, y: -270.06763}
+    - - {x: -312.9082, y: -251.44226}
+      - {x: -315.3916, y: -253.92564}
+      - {x: -315.3916, y: -258.8924}
+      - {x: -312.9082, y: -261.3758}
+      - {x: -309.1831, y: -261.3758}
+      - {x: -306.6997, y: -258.8924}
+      - {x: -306.6997, y: -253.92564}
+      - {x: -309.1831, y: -251.44226}
+    - - {x: 989.6343, y: -226.60846}
+      - {x: 1015.7099, y: -206.74141}
+      - {x: 1015.7099, y: -145.89859}
+      - {x: 974.7339, y: -145.89859}
+      - {x: 951.1416, y: -155.83212}
+      - {x: 951.1416, y: -226.60846}
+    - - {x: 930.0327, y: -118.58141}
+      - {x: 910.1655, y: -123.54817}
+      - {x: 881.60645, y: -147.14029}
+      - {x: 881.60645, y: -170.7324}
+      - {x: 923.8242, y: -219.15831}
+      - {x: 949.8999, y: -219.15831}
+      - {x: 997.0845, y: -148.38197}
+      - {x: 997.0845, y: -118.58141}
+    - - {x: 622.0913, y: -140.93184}
+      - {x: 592.2905, y: -143.41522}
+      - {x: 591.0488, y: -144.6569}
+      - {x: 591.0488, y: -171.97409}
+      - {x: 598.499, y: -180.66592}
+      - {x: 735.08594, y: -180.66592}
+      - {x: 741.29443, y: -179.42422}
+      - {x: 741.29443, y: -150.86536}
+      - {x: 733.84424, y: -140.93184}
+    - - {x: 892.78174, y: -109.88958}
+      - {x: 891.54004, y: -113.614655}
+      - {x: 896.50684, y: -118.58141}
+      - {x: 900.23193, y: -118.58141}
+      - {x: 902.71533, y: -116.09803}
+      - {x: 901.47363, y: -112.37296}
+      - {x: 896.50684, y: -109.88958}
+    - - {x: 603.4658, y: -76.363945}
+      - {x: 599.7407, y: -76.363945}
+      - {x: 596.0156, y: -77.60564}
+      - {x: 583.59863, y: -102.43944}
+      - {x: 583.59863, y: -108.64789}
+      - {x: 591.0488, y: -108.64789}
+      - {x: 598.499, y: -99.95606}
+      - {x: 604.7075, y: -81.3307}
+      - {x: 604.7075, y: -77.60564}
+    - - {x: 704.04346, y: -45.32169}
+      - {x: 701.56006, y: -47.805073}
+      - {x: 701.56006, y: -51.530144}
+      - {x: 704.04346, y: -54.013523}
+      - {x: 706.52686, y: -54.013523}
+      - {x: 709.01025, y: -51.530144}
+      - {x: 709.01025, y: -47.805073}
+      - {x: 706.52686, y: -45.32169}
+    - - {x: 586.08203, y: 0.6208451}
+      - {x: 586.08203, y: -4.345916}
+      - {x: 587.3237, y: -8.070986}
+      - {x: 596.0156, y: -11.796057}
+      - {x: 600.9824, y: -11.796057}
+      - {x: 602.2241, y: -9.312676}
+      - {x: 602.2241, y: -4.345916}
+      - {x: 593.5322, y: 0.6208451}
+    - - {x: 836.9053, y: 171.97409}
+      - {x: 764.8867, y: 171.97409}
+      - {x: 743.77783, y: 159.55719}
+      - {x: 697.83496, y: 86.29747}
+      - {x: 697.83496, y: 47.805073}
+      - {x: 700.31836, y: 32.90479}
+      - {x: 733.84424, y: 24.21296}
+      - {x: 800.896, y: 24.21296}
+      - {x: 861.73926, y: 76.363945}
+      - {x: 861.73926, y: 148.38197}
+      - {x: 845.59717, y: 170.7324}
+    - - {x: 659.3423, y: 97.47268}
+      - {x: 650.6504, y: 88.780846}
+      - {x: 650.6504, y: 75.12225}
+      - {x: 656.8589, y: 68.9138}
+      - {x: 674.2427, y: 68.9138}
+      - {x: 682.9346, y: 75.12225}
+      - {x: 682.9346, y: 87.539154}
+      - {x: 681.6929, y: 97.47268}
+    - - {x: 592.2905, y: 124.78986}
+      - {x: 589.8071, y: 121.06479}
+      - {x: 589.8071, y: 118.58141}
+      - {x: 591.0488, y: 116.09803}
+      - {x: 594.7739, y: 116.09803}
+      - {x: 599.7407, y: 118.58141}
+      - {x: 599.7407, y: 123.54817}
+      - {x: 597.2573, y: 124.78986}
+    - - {x: 602.2241, y: 130.9983}
+      - {x: 602.2241, y: 119.823105}
+      - {x: 629.5415, y: 119.823105}
+      - {x: 636.9917, y: 121.06479}
+      - {x: 636.9917, y: 130.9983}
+    - - {x: 711.49365, y: 158.31549}
+      - {x: 704.04346, y: 158.31549}
+      - {x: 656.8589, y: 133.48169}
+      - {x: 655.6172, y: 130.9983}
+      - {x: 655.6172, y: 124.78986}
+      - {x: 666.7925, y: 124.78986}
+      - {x: 690.38477, y: 130.9983}
+      - {x: 701.56006, y: 134.72339}
+      - {x: 711.49365, y: 150.86536}
+    - - {x: 682.9346, y: 232.81691}
+      - {x: 671.7593, y: 232.81691}
+      - {x: 671.7593, y: 222.88339}
+      - {x: 704.04346, y: 159.55719}
+      - {x: 716.46045, y: 159.55719}
+      - {x: 718.94385, y: 169.4907}
+      - {x: 718.94385, y: 199.29128}
+      - {x: 710.25195, y: 221.6417}
+    - - {x: 835.6636, y: 231.57521}
+      - {x: 833.1802, y: 229.09184}
+      - {x: 833.1802, y: 226.60846}
+      - {x: 835.6636, y: 224.12508}
+      - {x: 838.147, y: 224.12508}
+      - {x: 840.6304, y: 226.60846}
+      - {x: 840.6304, y: 229.09184}
+      - {x: 838.147, y: 231.57521}
+    - - {x: 653.1338, y: 232.81691}
+      - {x: 650.6504, y: 230.33353}
+      - {x: 650.6504, y: 229.09184}
+      - {x: 654.3755, y: 225.36676}
+      - {x: 656.8589, y: 225.36676}
+      - {x: 659.3423, y: 227.85014}
+      - {x: 659.3423, y: 230.33353}
+      - {x: 656.8589, y: 232.81691}
+    - - {x: 661.8257, y: 234.0586}
+      - {x: 659.3423, y: 231.57521}
+      - {x: 659.3423, y: 229.09184}
+      - {x: 661.8257, y: 226.60846}
+      - {x: 669.2759, y: 226.60846}
+      - {x: 671.7593, y: 229.09184}
+      - {x: 671.7593, y: 231.57521}
+      - {x: 669.2759, y: 234.0586}
+    - - {x: 779.7871, y: 301.10986}
+      - {x: 800.896, y: 356.98593}
+      - {x: 793.4458, y: 378.09467}
+      - {x: 769.8535, y: 378.09467}
+      - {x: 736.32764, y: 356.98593}
+      - {x: 684.1763, y: 370.64453}
+      - {x: 686.65967, y: 347.0524}
+      - {x: 721.42725, y: 312.28506}
+      - {x: 681.6929, y: 260.1341}
+      - {x: 681.6929, y: 243.99213}
+      - {x: 705.28516, y: 240.26704}
+      - {x: 745.01953, y: 291.17636}
+      - {x: 783.5122, y: 256.40903}
+      - {x: 820.7632, y: 227.85014}
+      - {x: 836.9053, y: 227.85014}
+      - {x: 838.147, y: 229.09184}
+      - {x: 814.5547, y: 281.24283}
+      - {x: 848.08057, y: 320.9769}
+      - {x: 848.08057, y: 337.1189}
+    - - {x: -531.44727, y: 419.07043}
+      - {x: -535.17236, y: 417.82874}
+      - {x: -535.17236, y: 409.1369}
+      - {x: -532.68896, y: 401.68677}
+      - {x: -523.9971, y: 386.7865}
+      - {x: -520.272, y: 384.3031}
+      - {x: -515.3052, y: 384.3031}
+      - {x: -512.8218, y: 385.5448}
+      - {x: -512.8218, y: 390.51157}
+      - {x: -527.72217, y: 415.34537}
+    - - {x: -946.1748, y: 412.86197}
+      - {x: -954.8667, y: 412.86197}
+      - {x: -953.625, y: 412.86197}
+      - {x: -951.1416, y: 415.34537}
+      - {x: -900.23193, y: 432.72903}
+      - {x: -793.4458, y: 427.76227}
+      - {x: -711.49365, y: 409.1369}
+      - {x: -656.8589, y: 406.65353}
+      - {x: -613.3994, y: 421.5538}
+      - {x: -576.14844, y: 447.6293}
+      - {x: -563.73145, y: 471.22144}
+      - {x: -563.73145, y: 517.16394}
+      - {x: -566.21484, y: 544.48114}
+      - {x: -571.18164, y: 578.0068}
+      - {x: -596.0156, y: 679.8254}
+      - {x: -603.4658, y: 760.5352}
+      - {x: -587.3237, y: 826.3448}
+      - {x: -567.45654, y: 900.8462}
+      - {x: -563.73145, y: 929.4051}
+      - {x: -563.73145, y: 979.0727}
+      - {x: -577.39014, y: 1016.3234}
+      - {x: -592.2905, y: 1032.4653}
+      - {x: -629.5415, y: 1056.0575}
+      - {x: -666.7925, y: 1063.5077}
+      - {x: -685.41797, y: 1063.5077}
+      - {x: -740.05273, y: 1049.849}
+      - {x: -810.8296, y: 1041.1572}
+      - {x: -930.0327, y: 1029.982}
+      - {x: -936.2412, y: 1033.707}
+      - {x: -1019.435, y: 1051.0907}
+      - {x: -1106.354, y: 1054.8158}
+      - {x: -1153.5386, y: 1042.3989}
+      - {x: -1182.0977, y: 1022.53186}
+      - {x: -1205.69, y: 965.4141}
+      - {x: -1215.6235, y: 897.12115}
+      - {x: -1215.6235, y: 894.63776}
+      - {x: -1203.2065, y: 883.4626}
+      - {x: -1182.0977, y: 792.81915}
+      - {x: -1193.273, y: 715.8344}
+      - {x: -1182.0977, y: 669.89185}
+      - {x: -1198.2397, y: 597.87384}
+      - {x: -1210.6567, y: 558.1397}
+      - {x: -1215.6235, y: 527.0975}
+      - {x: -1215.6235, y: 483.63834}
+      - {x: -1211.8984, y: 472.4631}
+      - {x: -1206.9316, y: 460.0462}
+      - {x: -1175.8892, y: 431.48734}
+      - {x: -1111.3208, y: 404.17017}
+      - {x: -1101.3872, y: 404.17017}
+      - {x: -1092.6953, y: 407.89523}
+      - {x: -1056.686, y: 404.17017}
+      - {x: -1039.3022, y: 404.17017}
+      - {x: -944.9331, y: 405.41183}
+      - {x: -943.6914, y: 407.89523}
+      - {x: -943.6914, y: 410.3786}
+    - - {x: -533.93066, y: 442.66254}
+      - {x: -536.41406, y: 432.72903}
+      - {x: -532.68896, y: 429.00397}
+      - {x: -531.44727, y: 429.00397}
+      - {x: -527.72217, y: 432.72903}
+      - {x: -525.2388, y: 442.66254}
+      - {x: -528.96387, y: 445.14594}
+    - - {x: -526.48047, y: 458.8045}
+      - {x: -528.96387, y: 455.07944}
+      - {x: -528.96387, y: 446.3876}
+      - {x: -527.72217, y: 445.14594}
+      - {x: -522.7554, y: 445.14594}
+      - {x: -517.7886, y: 451.35437}
+      - {x: -517.7886, y: 457.56284}
+      - {x: -520.272, y: 458.8045}
+    - - {x: -515.3052, y: 466.25467}
+      - {x: -517.7886, y: 463.77127}
+      - {x: -517.7886, y: 461.2879}
+      - {x: -515.3052, y: 458.8045}
+      - {x: -512.8218, y: 458.8045}
+      - {x: -510.33835, y: 461.2879}
+      - {x: -510.33835, y: 463.77127}
+      - {x: -512.8218, y: 466.25467}
+    - - {x: -525.2388, y: 520.88904}
+      - {x: -527.72217, y: 519.64734}
+      - {x: -527.72217, y: 514.6806}
+      - {x: -522.7554, y: 509.7138}
+      - {x: -517.7886, y: 509.7138}
+      - {x: -516.5469, y: 512.1972}
+      - {x: -516.5469, y: 517.16394}
+      - {x: -521.5137, y: 520.88904}
+    - - {x: -537.65576, y: 590.4237}
+      - {x: -546.34766, y: 580.4902}
+      - {x: -546.34766, y: 538.2727}
+      - {x: -538.89746, y: 520.88904}
+      - {x: -527.72217, y: 520.88904}
+      - {x: -527.72217, y: 589.182}
+      - {x: -528.96387, y: 590.4237}
+    - - {x: 946.1748, y: 662.4417}
+      - {x: 922.5825, y: 682.3088}
+      - {x: 891.54004, y: 689.7589}
+      - {x: 864.22266, y: 689.7589}
+      - {x: 849.32227, y: 683.5504}
+      - {x: 815.7964, y: 664.9251}
+      - {x: 795.9292, y: 626.4327}
+      - {x: 795.9292, y: 587.9403}
+      - {x: 850.56396, y: 548.20624}
+      - {x: 864.22266, y: 546.96454}
+      - {x: 920.0991, y: 546.96454}
+      - {x: 937.4829, y: 590.4237}
+      - {x: 947.4165, y: 607.8073}
+      - {x: 947.4165, y: 643.81635}
+    - - {x: -520.272, y: 601.5989}
+      - {x: -527.72217, y: 596.63214}
+      - {x: -527.72217, y: 591.66534}
+      - {x: -526.48047, y: 590.4237}
+      - {x: -520.272, y: 590.4237}
+      - {x: -516.5469, y: 594.14874}
+      - {x: -516.5469, y: 601.5989}
+    - - {x: 306.6997, y: 803.9944}
+      - {x: 280.62402, y: 810.2028}
+      - {x: 268.20703, y: 811.4445}
+      - {x: 244.61475, y: 811.4445}
+      - {x: 75.74365, y: 784.1273}
+      - {x: 64.56836, y: 780.4023}
+      - {x: 64.56836, y: 739.4265}
+      - {x: 72.018555, y: 705.9009}
+      - {x: 88.160645, y: 697.20905}
+      - {x: 280.62402, y: 697.20905}
+      - {x: 279.38232, y: 780.4023}
+      - {x: 317.875, y: 782.8857}
+      - {x: 317.875, y: 796.54425}
+    - - {x: -1187.0645, y: 715.8344}
+      - {x: -1189.5479, y: 713.351}
+      - {x: -1189.5479, y: 705.9009}
+      - {x: -1187.0645, y: 703.4175}
+      - {x: -1183.3394, y: 703.4175}
+      - {x: -1180.856, y: 708.3842}
+      - {x: -1180.856, y: 712.1093}
+      - {x: -1184.581, y: 715.8344}
+    - - {x: 63.326656, y: 740.6682}
+      - {x: 60.84326, y: 738.1848}
+      - {x: 60.84326, y: 735.7014}
+      - {x: 63.326656, y: 733.2181}
+      - {x: 68.29346, y: 733.2181}
+      - {x: 70.776855, y: 735.7014}
+      - {x: 70.776855, y: 738.1848}
+      - {x: 68.29346, y: 740.6682}
+    - - {x: -587.3237, y: 749.36005}
+      - {x: -589.8071, y: 746.87665}
+      - {x: -589.8071, y: 743.15155}
+      - {x: -587.3237, y: 740.6682}
+      - {x: -584.84033, y: 740.6682}
+      - {x: -581.11523, y: 744.39325}
+      - {x: -581.11523, y: 746.87665}
+      - {x: -583.59863, y: 749.36005}
+    - - {x: 326.5669, y: 800.26935}
+      - {x: 322.8418, y: 799.02765}
+      - {x: 322.8418, y: 786.6107}
+      - {x: 332.7754, y: 784.1273}
+      - {x: 348.91748, y: 784.1273}
+      - {x: 350.15918, y: 791.5775}
+      - {x: 346.43408, y: 796.54425}
+      - {x: 338.9839, y: 800.26935}
+    - - {x: 117.961426, y: 1047.3657}
+      - {x: 101.819336, y: 1027.4987}
+      - {x: 96.85254, y: 1005.1482}
+      - {x: 96.85254, y: 948.03046}
+      - {x: 112.99463, y: 923.19666}
+      - {x: 158.9375, y: 923.19666}
+      - {x: 176.32129, y: 946.78876}
+      - {x: 176.32129, y: 1047.3657}
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

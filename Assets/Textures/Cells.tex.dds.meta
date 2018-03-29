@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b41bc39b227e58e45ba9233b90617087
+labels:
+- Terrain
+timeCreated: 1520405822
+licenseType: Free
+IHVImageFormatImporter:
+  externalObjects: {}
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  isReadable: 0
+  sRGBTexture: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
