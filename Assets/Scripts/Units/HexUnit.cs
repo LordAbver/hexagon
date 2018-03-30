@@ -9,6 +9,7 @@ public class HexUnit : MonoBehaviour {
     private List<HexCell> _pathToTravel;
     private HexCell _location;
     private const float _travelSpeed = 4f;
+    private String _currentAnimation = "Idle";
 
     public Texture2D CursorTexture;
 
@@ -83,6 +84,7 @@ public class HexUnit : MonoBehaviour {
             for (; t < 1f; t += Time.deltaTime * _travelSpeed)
             {
                 transform.localPosition = Bezier.GetPoint(a, b, c, t);
+                Rotate(baseCell.Coordinates, targetCell.Coordinates);
                 yield return null;
             }
             t -= 1f;
@@ -96,10 +98,39 @@ public class HexUnit : MonoBehaviour {
         for (; t < 1f; t += Time.deltaTime * _travelSpeed)
         {
             transform.localPosition = Bezier.GetPoint(a, b, c, t);
+            Rotate(baseCell.Coordinates, targetCell.Coordinates);
             yield return null;
         }
 
         transform.localPosition = _location.Position.SetY(targetCell.Height);
+
+        SetAnimation(AnimationSet.IDLE);
+
+        ListPool<HexCell>.Add(_pathToTravel);
+        _pathToTravel = null;
+    }
+
+    public void Rotate(HexCoordinates from, HexCoordinates to)
+    {
+        if(from.Z < to.Z)
+            SetAnimation(AnimationSet.WALK_NORTH);
+
+        if (from.Z > to.Z)
+            SetAnimation(AnimationSet.WALK_SOUTH);
+
+        if (from.Y < to.Y && from.Z == to.Z)
+            SetAnimation(AnimationSet.WALK_EAST);
+
+        if (from.Y > to.Y && from.Z == to.Z)
+            SetAnimation(AnimationSet.WALK_WEST);
+    }
+
+    private void SetAnimation(String animation)
+    {
+        if (_currentAnimation == animation) return;
+        _animator.SetBool(_currentAnimation, false);
+        _currentAnimation = animation;
+        _animator.SetBool(_currentAnimation, true);
     }
 
     // Use this for initialization
@@ -109,15 +140,10 @@ public class HexUnit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(1))
+        /*if (Input.GetMouseButtonDown(1))
         {
             _animator.SetTrigger("AttackSouth");
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            _animator.SetBool("WalkSouth", true);
-        }
+        }*/
 
         //Follow camera rotation
         transform.rotation = Quaternion.LookRotation(-Camera.main.transform.forward);

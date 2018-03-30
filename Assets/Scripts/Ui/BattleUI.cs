@@ -58,6 +58,9 @@ public class BattleUI : MonoBehaviour
         {
             ShowTerrainType();
             grid.HighlightCell(_currentCell);
+
+            if (_selectedUnit)
+                _selectedUnit.Rotate(grid.SelectedCell.Coordinates, _currentCell.Coordinates);
         }
     }
 
@@ -110,8 +113,8 @@ public class BattleUI : MonoBehaviour
 
     void ShowTerrainType()
     {
-        if(_currentCell)
-            Debug.Log("Terrain type: " + _currentCell.TerrainType);
+        //if(_currentCell)
+            //Debug.Log("Terrain type: " + _currentCell.TerrainType);
     }
 
     private void ShowActions(Boolean enable)
