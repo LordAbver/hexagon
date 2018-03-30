@@ -68,20 +68,38 @@ public class HexUnit : MonoBehaviour {
 
     private IEnumerator TravelPath()
     {
+        Vector3 a, b, c = _pathToTravel[0].Position;
+        HexCell baseCell, targetCell = null;
+
+        float t = Time.deltaTime * _travelSpeed;
         for (int i = 1; i < _pathToTravel.Count; i++)
         {
-            var baseCell = _pathToTravel[i - 1];
-            Vector3 a = new Vector3(baseCell.Position.x, baseCell.Height, baseCell.Position.z);
+            baseCell = _pathToTravel[i - 1];
+            targetCell = _pathToTravel[i];
+            a = c.SetY(baseCell.Height);
+            b = baseCell.Position.SetY(baseCell.Height);
+            c = ((b + targetCell.Position) * 0.5f).SetY(targetCell.Height);
 
-            var targetCell = _pathToTravel[i];
-            Vector3 b = new Vector3(targetCell.Position.x, targetCell.Height, targetCell.Position.z);
-
-            for (float t = 0f; t < 1f; t += Time.deltaTime * _travelSpeed)
+            for (; t < 1f; t += Time.deltaTime * _travelSpeed)
             {
-                transform.localPosition = Vector3.Lerp(a, b, t);
+                transform.localPosition = Bezier.GetPoint(a, b, c, t);
                 yield return null;
             }
+            t -= 1f;
         }
+
+        baseCell = _pathToTravel[_pathToTravel.Count - 1];
+        a = c.SetY(baseCell.Height); ;
+        b = baseCell.Position.SetY(baseCell.Height);
+        c = b;
+
+        for (; t < 1f; t += Time.deltaTime * _travelSpeed)
+        {
+            transform.localPosition = Bezier.GetPoint(a, b, c, t);
+            yield return null;
+        }
+
+        transform.localPosition = _location.Position.SetY(targetCell.Height);
     }
 
     // Use this for initialization
