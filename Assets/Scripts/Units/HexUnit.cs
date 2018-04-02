@@ -9,12 +9,13 @@ public class HexUnit : MonoBehaviour {
     private List<HexCell> _pathToTravel;
     private HexCell _location;
     private const float _travelSpeed = 4f;
-    private String _currentAnimation = "Idle";
+    private String _currentAnimation = AnimationSet.IDLE;
 
     public Texture2D CursorTexture;
 
     public Int32 Speed;
     public Int32 AttackRange;
+    public UnitTeams Team { get; set; }
 
     private Dictionary<HexCell, PathSearchResult> _availableMoves;
     public Dictionary<HexCell, PathSearchResult> AvailableMoves
@@ -104,7 +105,7 @@ public class HexUnit : MonoBehaviour {
 
         transform.localPosition = _location.Position.SetY(targetCell.Height);
 
-        SetAnimation(AnimationSet.IDLE);
+        ResetAnimation();
 
         ListPool<HexCell>.Add(_pathToTravel);
         _pathToTravel = null;
@@ -125,10 +126,19 @@ public class HexUnit : MonoBehaviour {
             SetAnimation(AnimationSet.WALK_WEST);
     }
 
+    public void ResetAnimation()
+    {
+        _animator.SetBool(_currentAnimation, false);
+        _animator.Play(AnimationSet.IDLE);
+    }
+
     private void SetAnimation(String animation)
     {
         if (_currentAnimation == animation) return;
-        _animator.SetBool(_currentAnimation, false);
+
+        if(_currentAnimation != AnimationSet.IDLE)
+            _animator.SetBool(_currentAnimation, false);
+
         _currentAnimation = animation;
         _animator.SetBool(_currentAnimation, true);
     }
@@ -140,12 +150,6 @@ public class HexUnit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        /*if (Input.GetMouseButtonDown(1))
-        {
-            _animator.SetTrigger("AttackSouth");
-        }*/
-
-        //Follow camera rotation
         transform.rotation = Quaternion.LookRotation(-Camera.main.transform.forward);
     }
 
@@ -155,15 +159,6 @@ public class HexUnit : MonoBehaviour {
         {
             transform.localPosition = _location.Position;
         }
-    }
-
-    void OnMouseDown()
-    {
-        /*if (Input.GetMouseButtonDown(0))
-        {
-            var grid = GetComponent<HexGrid>();
-            var g = 4;
-        }*/
     }
 
     void OnMouseEnter()

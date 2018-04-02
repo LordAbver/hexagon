@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -22,7 +20,7 @@ public class HexGrid : MonoBehaviour
     private HashSet<HexCoordinates> _hills;
     private HashSet<HexCoordinates> _forest;
     private Dictionary<HexCoordinates, HashSet<HexDirection>> _roads;
-    private Dictionary<HexCoordinates, String> _units;
+    private Dictionary<HexCoordinates, UnitMeta> _units;
 
 
     public Int16 Width = 6;
@@ -376,7 +374,7 @@ public class HexGrid : MonoBehaviour
         var coordinates = HexCoordinates.FromPosition(position);
         var index = coordinates.X + coordinates.Z * Width + coordinates.Z / 2;
 
-        return index < _cells.Length ? _cells[index] : null;
+        return index > 0 && index < _cells.Length ? _cells[index] : null;
     }
 
     public HexCell GetCell(Ray ray)
@@ -389,12 +387,19 @@ public class HexGrid : MonoBehaviour
         return null;
     }
 
-    public void AddUnit(HexCell cell, String unitName)
+    public void AddUnit(HexCell cell, UnitMeta meta)
     {
         if (cell && !cell.Unit)
         {
-            var prefab = Instantiate(Resources.Load(String.Format("Units\\{0}", unitName)), new Vector3(0, 0, 0), Quaternion.Euler(0, 180, 0)) as GameObject;
+            var prefab = Instantiate(Resources.Load(String.Format("Units\\{0}", meta.Name)), new Vector3(0, 0, 0), Quaternion.Euler(0, 180, 0)) as GameObject;
             var unit = prefab.GetComponent<HexUnit>();
+
+            //Assign team number
+            unit.Team = meta.Team;
+            var teamNumber = unit.transform.Find("TeamNumber");
+            var sprites = teamNumber.GetComponent<TeamNumber>().NumberSprites;
+            teamNumber.GetComponent<SpriteRenderer>().sprite = sprites[meta.SpriteIdx];
+
             unit.transform.SetParent(gameObject.transform, false);
             unit.Location = cell;
         }
@@ -415,8 +420,8 @@ public class HexGrid : MonoBehaviour
 
     private void LoadUnits()
     {
-        _units = new Dictionary<HexCoordinates, String>() {
-            { new HexCoordinates(5, 1), "Bishop" }
+        _units = new Dictionary<HexCoordinates, UnitMeta>() {
+            { new HexCoordinates(5, 1), new UnitMeta("Bishop", UnitTeams.Teal, 0) }
         };
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class AnimationSet {
-    public const string IDLE = "Idle";
+    public const string IDLE = "idle";
 
     //Walk
     public const string WALK_NORTH = "WalkNorth";

@@ -312,8 +312,10 @@
     <Compile Include="Assets\Scripts\Map\Grid\HexVisualStates.cs" />
     <Compile Include="Assets\Scripts\Map\Grid\PathSearchResult.cs" />
     <Compile Include="Assets\Scripts\Ui\BattleUI.cs" />
+    <Compile Include="Assets\Scripts\Ui\TeamNumber.cs" />
     <Compile Include="Assets\Scripts\Units\AnimationSet.cs" />
     <Compile Include="Assets\Scripts\Units\HexUnit.cs" />
+    <Compile Include="Assets\Scripts\Units\UnitMeta.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\AlphaBlended.shader" />

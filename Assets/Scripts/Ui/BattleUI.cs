@@ -74,6 +74,7 @@ public class BattleUI : MonoBehaviour
             {
                 grid.ClearMoves(_selectedUnit);
                 ShowActions(false);
+                _selectedUnit.ResetAnimation();
                 _mode = Modes.Default;
             }
                 
