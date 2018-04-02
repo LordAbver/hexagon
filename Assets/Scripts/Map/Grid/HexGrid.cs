@@ -171,12 +171,12 @@ public class HexGrid : MonoBehaviour
         foreach(var cell in _cells)
         {
             var res = Search(fromCell, cell, speed, attackRange);
-            if (res.CanReach)
+            if (res.CanReach && !res.CanAttack)
             {
                 cell.SetVisualStyle(HexVisualStates.PATH, true);
                 unit.AvailableMoves.Add(cell, res);
             }
-            if(!res.CanReach && res.CanAttack)
+            if (!res.CanReach && res.CanAttack)
             {
                 cell.SetVisualStyle(HexVisualStates.ATTACK, true);
                 unit.AvailableMoves.Add(cell, res);
@@ -226,7 +226,7 @@ public class HexGrid : MonoBehaviour
             if (currentTurn > 0)
             {
                 canReach = false;
-                canAttack = current.AttackDistance <= attackRange;
+                canAttack = current.AttackDistance <= attackRange && current.Unit && current.Unit.Team != fromCell.Unit.Team;
             }
                 
             if (current == toCell)
@@ -237,7 +237,7 @@ public class HexGrid : MonoBehaviour
                 HexCell neighbor = current.GetNeighbor(d);
 
                 if (neighbor == null || neighbor.SearchPhase > _searchFrontierPhase) continue;
-                if (neighbor.TerrainType == HexTerrainTypes.LAKE || neighbor.Unit) continue;
+                if (neighbor.TerrainType == HexTerrainTypes.LAKE || (neighbor.Unit && neighbor.Unit.Team == fromCell.Unit.Team)) continue;
 
                 Int32 moveCost = 0;
 
@@ -421,7 +421,8 @@ public class HexGrid : MonoBehaviour
     private void LoadUnits()
     {
         _units = new Dictionary<HexCoordinates, UnitMeta>() {
-            { new HexCoordinates(5, 1), new UnitMeta("Bishop", UnitTeams.Teal, 0) }
+            { new HexCoordinates(5, 1), new UnitMeta("Bishop", UnitTeams.Teal, 0) },
+            { new HexCoordinates(3, 4), new UnitMeta("Angel", UnitTeams.Purple, 0) }
         };
     }
 
