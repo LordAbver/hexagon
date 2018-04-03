@@ -60,7 +60,11 @@ public class BattleUI : MonoBehaviour
             grid.HighlightCell(_currentCell);
 
             if (_selectedUnit)
-                _selectedUnit.Rotate(grid.SelectedCell.Coordinates, _currentCell.Coordinates);
+            {
+                var dir = grid.SelectedCell.Coordinates.GetRelatedDirection(_currentCell.Coordinates);
+                _selectedUnit.Rotate(dir);
+            }
+               
         }
     }
 
@@ -79,11 +83,20 @@ public class BattleUI : MonoBehaviour
                 _mode = Modes.Default;
             }
                 
-            _selectedUnit = _currentCell.Unit;
-            grid.SelectCell(_currentCell);
+            
+            if(_mode == Modes.Attack && _currentCell.HasEnemyUnit(_selectedUnit.Team))
+            {
+                var dir = grid.SelectedCell.Coordinates.GetRelatedDirection(_currentCell.Coordinates);
+                _selectedUnit.Attack(dir);
+            }
+            else
+            {
+                _selectedUnit = _currentCell.Unit;
+                grid.SelectCell(_currentCell);
 
-            if (_selectedUnit)
-                ShowActions(true);
+                if (_selectedUnit)
+                    ShowActions(true);
+            }
         }
     }
 

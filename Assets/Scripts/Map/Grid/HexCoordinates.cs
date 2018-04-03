@@ -73,6 +73,29 @@ public struct HexCoordinates
         return new HexCoordinates(iX, iZ);
     }
 
+    public HexDirection GetRelatedDirection(HexCoordinates other)
+    {
+        if (other.Z > Z && other.Y == Y)
+            return HexDirection.NW;
+
+        if (other.Z > Z && other.Y < Y)
+            return HexDirection.NE;
+
+        if (other.Z == Z && other.X < X)
+            return HexDirection.W;
+
+        if (other.Z == Z && other.X > X)
+            return HexDirection.E;
+
+        if (other.Z < Z && other.Y > Y)
+            return HexDirection.SW;
+
+        if (other.Z < Z && other.Y == Y)
+            return HexDirection.SE;
+
+        return HexDirection.SE; //Default state
+    }
+
     public int DistanceTo(HexCoordinates other)
     {
         return 

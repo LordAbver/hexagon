@@ -87,7 +87,8 @@ public class HexUnit : MonoBehaviour {
             for (; t < 1f; t += Time.deltaTime * _travelSpeed)
             {
                 transform.localPosition = Bezier.GetPoint(a, b, c, t);
-                Rotate(baseCell.Coordinates, targetCell.Coordinates);
+                var dir = baseCell.Coordinates.GetRelatedDirection(targetCell.Coordinates);
+                Rotate(dir);
                 yield return null;
             }
             t -= 1f;
@@ -101,7 +102,8 @@ public class HexUnit : MonoBehaviour {
         for (; t < 1f; t += Time.deltaTime * _travelSpeed)
         {
             transform.localPosition = Bezier.GetPoint(a, b, c, t);
-            Rotate(baseCell.Coordinates, targetCell.Coordinates);
+            var dir = baseCell.Coordinates.GetRelatedDirection(targetCell.Coordinates);
+            Rotate(dir);
             yield return null;
         }
 
@@ -113,19 +115,14 @@ public class HexUnit : MonoBehaviour {
         _pathToTravel = null;
     }
 
-    public void Rotate(HexCoordinates from, HexCoordinates to)
+    public void Rotate(HexDirection direction)
     {
-        if(from.Z < to.Z)
-            SetAnimation(AnimationSet.WALK_NORTH);
+       SetAnimation(String.Format("{0}{1}", AnimationSet.WALK, direction.GetName()));
+    }
 
-        if (from.Z > to.Z)
-            SetAnimation(AnimationSet.WALK_SOUTH);
-
-        if (from.Y < to.Y && from.Z == to.Z)
-            SetAnimation(AnimationSet.WALK_EAST);
-
-        if (from.Y > to.Y && from.Z == to.Z)
-            SetAnimation(AnimationSet.WALK_WEST);
+    public void Attack(HexDirection direction)
+    {
+        _animator.SetTrigger(String.Format("{0}{1}", AnimationSet.ATTACK, direction.GetName()));
     }
 
     public void ResetAnimation()
