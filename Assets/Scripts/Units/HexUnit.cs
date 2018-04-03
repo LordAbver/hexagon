@@ -122,6 +122,7 @@ public class HexUnit : MonoBehaviour {
 
     public void Attack(HexDirection direction)
     {
+        _animator.SetBool(String.Format("{0}{1}", AnimationSet.WALK, direction.GetName()), false);
         _animator.SetTrigger(String.Format("{0}{1}", AnimationSet.ATTACK, direction.GetName()));
     }
 

@@ -9,6 +9,7 @@ public class BattleUI : MonoBehaviour
     private Vector3 _lastPos = Vector3.zero;
     private enum Modes { Default, Move, Attack };
     private Modes _mode = Modes.Default;
+    private HexDirection _direction;
 
     public HexGrid grid;
 
@@ -19,12 +20,15 @@ public class BattleUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             if(_selectedUnit && _mode == Modes.Move)
                 DoMove();
 
-            DoSelection();
+            if (_mode == Modes.Attack && _currentCell.HasEnemyUnit(_selectedUnit.Team))
+                DoAttack();
+            else
+                DoSelection();
         }
         else if (_selectedUnit && _mode == Modes.Move)
         {
@@ -61,8 +65,8 @@ public class BattleUI : MonoBehaviour
 
             if (_selectedUnit)
             {
-                var dir = grid.SelectedCell.Coordinates.GetRelatedDirection(_currentCell.Coordinates);
-                _selectedUnit.Rotate(dir);
+                _direction = grid.SelectedCell.Coordinates.GetRelatedDirection(_currentCell.Coordinates);
+                _selectedUnit.Rotate(_direction);
             }
                
         }
@@ -82,21 +86,13 @@ public class BattleUI : MonoBehaviour
                 _selectedUnit.ResetAnimation();
                 _mode = Modes.Default;
             }
-                
-            
-            if(_mode == Modes.Attack && _currentCell.HasEnemyUnit(_selectedUnit.Team))
-            {
-                var dir = grid.SelectedCell.Coordinates.GetRelatedDirection(_currentCell.Coordinates);
-                _selectedUnit.Attack(dir);
-            }
-            else
-            {
-                _selectedUnit = _currentCell.Unit;
-                grid.SelectCell(_currentCell);
 
-                if (_selectedUnit)
-                    ShowActions(true);
-            }
+
+            _selectedUnit = _currentCell.Unit;
+            grid.SelectCell(_currentCell);
+
+            if (_selectedUnit)
+                ShowActions(true);
         }
     }
 
@@ -125,6 +121,11 @@ public class BattleUI : MonoBehaviour
             grid.ShowAllAvailableMoves(_currentCell, _selectedUnit.Speed, _selectedUnit.AttackRange);
             grid.ClearAttacks(_selectedUnit);
         }
+    }
+
+    void DoAttack()
+    {
+        _selectedUnit.Attack(_direction);
     }
 
     void ShowTerrainType()
