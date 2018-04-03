@@ -10,12 +10,9 @@ public class HexGrid : MonoBehaviour
     private HexMesh _hexMesh;
     private HexCell[] _cells;
     private HexCell _highLightedCell;
-    private HexCell _selectedCell;
     private HexCellPriorityQueue _searchFrontier;
     private Int32 _searchFrontierPhase;
     private HexCell _currentPathFrom, _currentPathTo;
-    private Boolean _currentPathExists;
-
     private HashSet<HexCoordinates> _lakes;
     private HashSet<HexCoordinates> _hills;
     private HashSet<HexCoordinates> _forest;
@@ -29,20 +26,8 @@ public class HexGrid : MonoBehaviour
     public HexCell CellPrefab;
     public Text CellLabelPrefab;
     public Color DefaultColor = Color.white;
-    public Boolean HasPath
-    {
-        get
-        {
-            return _currentPathExists;
-        }
-    }
-
-    public HexCell SelectedCell{
-        get
-        {
-            return _selectedCell;
-        }
-    }
+    public Boolean HasPath { get; private set; }
+    public HexCell SelectedCell { get; private set; }
 
     void Awake()
     {
@@ -142,13 +127,13 @@ public class HexGrid : MonoBehaviour
     {
         if (cell == null) return;
 
-        if (_selectedCell != null && _selectedCell != cell)
-            _selectedCell.SetVisualStyle(HexVisualStates.SELECTED, false);
+        if (SelectedCell != null && SelectedCell != cell)
+            SelectedCell.SetVisualStyle(HexVisualStates.SELECTED, false);
 
-        if (_selectedCell != cell)
+        if (SelectedCell != cell)
             cell.SetVisualStyle(HexVisualStates.SELECTED, true);
 
-        _selectedCell = cell;
+        SelectedCell = cell;
     }
 
     public void HighlightCell(HexCell cell)
@@ -193,7 +178,7 @@ public class HexGrid : MonoBehaviour
 
         _currentPathFrom = fromCell;
         _currentPathTo = toCell;
-        _currentPathExists = Search(fromCell, toCell, speed);
+        HasPath = Search(fromCell, toCell, speed);
         //ShowPath(speed);
     }
 
@@ -309,9 +294,24 @@ public class HexGrid : MonoBehaviour
         return new PathSearchResult();
     }
 
+    public Boolean SearchForAttack(HexCell fromCell, Int32 range)
+    {
+        var frontier = new HexCellPriorityQueue();
+        fromCell.SearchPhase = 2;
+        fromCell.Distance = 0;
+        frontier.Enqueue(fromCell);
+        while (frontier.Count > 0)
+        {
+            var current = frontier.Dequeue();
+            current.SearchPhase += 1;
+            var absoluteTurn = current.AbsoluteDistance - 1;
+        }
+        return false;
+    }
+
     public List<HexCell> GetPath()
     {
-        if (!_currentPathExists)
+        if (!HasPath)
         {
             return null;
         }
@@ -327,7 +327,7 @@ public class HexGrid : MonoBehaviour
 
     private void ShowPath(Int32 speed)
     {
-        if (_currentPathExists)
+        if (HasPath)
         {
             var current = _currentPathTo;
             while (current != _currentPathFrom)
@@ -353,7 +353,7 @@ public class HexGrid : MonoBehaviour
 
     public void ClearPath()
     {
-        if (_currentPathExists)
+        if (HasPath)
         {
             HexCell current = _currentPathTo;
             while (current != _currentPathFrom)
@@ -363,7 +363,7 @@ public class HexGrid : MonoBehaviour
                 current = current.PathFrom;
             }
             //current.SetVisualStyle(HexVisualStates.PATH, false);
-            _currentPathExists = false;
+            HasPath = false;
         }
         _currentPathFrom = _currentPathTo = null;
     }
