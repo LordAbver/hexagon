@@ -73,6 +73,7 @@ public class BattleUI : MonoBehaviour
             if (!_currentCell.Unit && _selectedUnit)
             {
                 grid.ClearMoves(_selectedUnit);
+                grid.ClearAttacks(_selectedUnit);
                 ShowActions(false);
                 _selectedUnit.ResetAnimation();
                 _mode = Modes.Default;
@@ -109,6 +110,7 @@ public class BattleUI : MonoBehaviour
             grid.ClearPath();
             grid.SelectCell(_currentCell);
             grid.ShowAllAvailableMoves(_currentCell, _selectedUnit.Speed, _selectedUnit.AttackRange);
+            grid.ClearAttacks(_selectedUnit);
         }
     }
 
@@ -122,6 +124,20 @@ public class BattleUI : MonoBehaviour
     {
         var ui = transform.Find("Actions");
         ui.gameObject.SetActive(enable);
+
+        if(_selectedUnit.AvailabeAttacks == null)
+            _selectedUnit.AvailabeAttacks = grid.GetAvailableAttacks(grid.SelectedCell, _selectedUnit.AttackRange);
+
+        ui.Find("Attack").gameObject.SetActive(_selectedUnit.AvailabeAttacks.Count > 0);
+    }
+
+    public void ShowAvailableAttacks()
+    {
+        if(_selectedUnit.AvailabeAttacks != null && _selectedUnit.AvailabeAttacks.Count > 0)
+        {
+            grid.ShowAllAvailableAttacks(_selectedUnit);
+            _mode = Modes.Attack;
+        }
     }
 
     public void ShowAvailableMoves()

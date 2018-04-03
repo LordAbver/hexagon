@@ -33,6 +33,8 @@ public class HexUnit : MonoBehaviour {
         }
     }
 
+    public HashSet<HexCell> AvailabeAttacks { get; set; }
+
     public HexCell Location
     {
         get

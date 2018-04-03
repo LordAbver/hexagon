@@ -170,6 +170,16 @@ public class HexGrid : MonoBehaviour
         }
     }
 
+    public void ShowAllAvailableAttacks(HexUnit unit)
+    {
+        ClearMoves(unit);
+
+        foreach (var cell in unit.AvailabeAttacks)
+        {
+            cell.SetVisualStyle(HexVisualStates.ATTACK, true);
+        }
+    }
+
     public void FindPath(HexCell fromCell, HexCell toCell, Int32 speed)
     {
         ClearPath();
@@ -294,19 +304,28 @@ public class HexGrid : MonoBehaviour
         return new PathSearchResult();
     }
 
-    public Boolean SearchForAttack(HexCell fromCell, Int32 range)
+    public HashSet<HexCell> GetAvailableAttacks(HexCell fromCell, Int32 range)
     {
+        var res = new HashSet<HexCell>();
         var frontier = new HexCellPriorityQueue();
-        fromCell.SearchPhase = 2;
         fromCell.Distance = 0;
         frontier.Enqueue(fromCell);
         while (frontier.Count > 0)
         {
             var current = frontier.Dequeue();
-            current.SearchPhase += 1;
-            var absoluteTurn = current.AbsoluteDistance - 1;
+            for (HexDirection d = HexDirection.NE; d <= HexDirection.NW; d++)
+            {
+                HexCell neighbor = current.GetNeighbor(d);
+                if (neighbor == null || neighbor == fromCell) continue;
+                if (neighbor.HasEnemyUnit(fromCell.Unit.Team) &&  fromCell.Coordinates.DistanceTo(neighbor.Coordinates) <= range && !res.Contains(neighbor))
+                {
+                    res.Add(neighbor);
+                    frontier.Enqueue(neighbor);
+                }
+            }
         }
-        return false;
+
+        return res;
     }
 
     public List<HexCell> GetPath()
@@ -349,6 +368,18 @@ public class HexGrid : MonoBehaviour
         }
 
         unit.AvailableMoves.Clear();
+    }
+
+    public void ClearAttacks(HexUnit unit)
+    {
+        if (unit.AvailabeAttacks == null) return;
+
+        foreach (var cell in unit.AvailabeAttacks)
+        {
+            cell.SetVisualStyle(HexVisualStates.ATTACK, false);
+        }
+
+        unit.AvailabeAttacks = null;
     }
 
     public void ClearPath()

@@ -18,6 +18,11 @@ public class HexCell : MonoBehaviour
     public HexCell PathFrom { get; set; }
     public Int32 SearchHeuristic { get; set; }
 
+    public Boolean HasEnemyUnit(UnitTeams team)
+    {
+        return Unit && Unit.Team != team;
+    }
+
     private float _height;
     public float Height {
         get
