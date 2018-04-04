@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62aeec286ff125478435ee90f30a06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemy: {fileID: 0}
   CursorTexture: {fileID: 2800000, guid: 233c8211eff781041a4095b71484013f, type: 3}
   Speed: 10
   AttackRange: 1
@@ -181,7 +182,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300008, guid: 31ac2bc15b7feb8479b99776b48f37c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.23, y: 0.4}

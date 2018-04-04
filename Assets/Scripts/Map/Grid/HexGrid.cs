@@ -428,6 +428,8 @@ public class HexGrid : MonoBehaviour
 
             //Assign team number
             unit.Team = meta.Team;
+
+            //Set base state
             if (PlayerTeam != meta.Team)
                 unit.ActPhase = ActPhase.Wait;
 

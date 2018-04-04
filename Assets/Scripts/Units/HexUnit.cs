@@ -11,7 +11,6 @@ public class HexUnit : MonoBehaviour {
     private HexDirection _direction;
     private const float _travelSpeed = 4f;
     private String _currentAnimation = AnimationSet.IDLE;
-    public ActPhase ActPhase { get; set; }
     public HexUnit _enemy;
 
     public void SetEnemy(HexUnit enemy)
@@ -23,6 +22,20 @@ public class HexUnit : MonoBehaviour {
         get
         {
             return _enemy && ActPhase == ActPhase.Wait && _enemy.Location.Coordinates.DistanceTo(Location.Coordinates) <= AttackRange;
+        }
+    }
+
+    private ActPhase _actPhase;
+    public ActPhase ActPhase
+    {
+        get
+        {
+            return _actPhase;
+        }
+        set
+        {
+            _animator.SetBool("IsActive", value == ActPhase.WaitForCommand);
+            _actPhase = value;
         }
     }
 
@@ -66,7 +79,7 @@ public class HexUnit : MonoBehaviour {
             transform.localPosition = new Vector3(value.Position.x, value.Height, value.Position.z);
         }
     }
-
+    
     public void Travel(List<HexCell> path)
     {
         ActPhase = ActPhase.Walk;
@@ -84,8 +97,8 @@ public class HexUnit : MonoBehaviour {
 
     private void Awake()
     {
+        _animator = GetComponent<Animator>();
         ActPhase = ActPhase.WaitForCommand;
-        _animator = GetComponent<Animator>();    
     }
 
     private IEnumerator TravelPath()
@@ -148,6 +161,12 @@ public class HexUnit : MonoBehaviour {
         _animator.SetTrigger(String.Format("{0}{1}", AnimationSet.ATTACK, direction.GetName()));
     }
 
+    public void EndTurn()
+    {
+        ActPhase = ActPhase.EndTurn;
+        ResetAnimation();
+    }
+
     public void ResetAnimation()
     {
         _animator.SetBool(_currentAnimation, false);
@@ -193,6 +212,15 @@ public class HexUnit : MonoBehaviour {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
+    void OnAttackEnd()
+    {
+        if (_enemy != null && _enemy.CanCounter)
+        {
+            _enemy.Attack(this, _direction.Opposite());
+            ActPhase = ActPhase.EndTurn;
+        }
+    }
+
     public void Die()
     {
         _location.Unit = null;
@@ -212,14 +240,5 @@ public class HexUnit : MonoBehaviour {
     public Boolean CanAttack(HexCell targetCell)
     {
         return _availableMoves.ContainsKey(targetCell) && _availableMoves[targetCell].CanAttack;
-    }
-
-    public void OnAttackEnd()
-    {
-        if (_enemy != null && _enemy.CanCounter)
-        {
-            _enemy.Attack(this, _direction.Opposite());
-            ActPhase = ActPhase.EndTurn;
-        }   
     }
 }

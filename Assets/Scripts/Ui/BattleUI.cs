@@ -63,7 +63,7 @@ public class BattleUI : MonoBehaviour
             ShowTerrainType();
             grid.HighlightCell(_currentCell);
 
-            if (_selectedUnit)
+            if (_selectedUnit && _selectedUnit.ActPhase == ActPhase.WaitForCommand)
             {
                 _direction = grid.SelectedCell.Coordinates.GetRelatedDirection(_currentCell.Coordinates);
                 _selectedUnit.Rotate(_direction);
@@ -91,7 +91,7 @@ public class BattleUI : MonoBehaviour
             _selectedUnit = _currentCell.Unit;
             grid.SelectCell(_currentCell);
 
-            if (_selectedUnit)
+            if (_selectedUnit && _selectedUnit.ActPhase == ActPhase.WaitForCommand)
                 ShowActions(true);
         }
     }
@@ -118,8 +118,9 @@ public class BattleUI : MonoBehaviour
             _selectedUnit.Travel(grid.GetPath());
             grid.ClearPath();
             grid.SelectCell(_currentCell);
-            grid.ShowAllAvailableMoves(_currentCell, _selectedUnit.Speed, _selectedUnit.AttackRange);
+            grid.ClearMoves(_selectedUnit);
             grid.ClearAttacks(_selectedUnit);
+            EnableOption("Move", false);
         }
     }
 
@@ -139,10 +140,16 @@ public class BattleUI : MonoBehaviour
         var ui = transform.Find("Actions");
         ui.gameObject.SetActive(enable);
 
-        if(_selectedUnit.AvailabeAttacks == null)
+        if (_selectedUnit.AvailabeAttacks == null)
             _selectedUnit.AvailabeAttacks = grid.GetAvailableAttacks(grid.SelectedCell, _selectedUnit.AttackRange);
 
-        ui.Find("Attack").gameObject.SetActive(_selectedUnit.AvailabeAttacks.Count > 0);
+        EnableOption("Attack", _selectedUnit.AvailabeAttacks.Count > 0);
+    }
+
+    private void EnableOption(String option, Boolean enable)
+    {
+        var ui = transform.Find("Actions");
+        ui.Find(option).gameObject.SetActive(enable);
     }
 
     public void ShowAvailableAttacks()
@@ -152,6 +159,12 @@ public class BattleUI : MonoBehaviour
             grid.ShowAllAvailableAttacks(_selectedUnit);
             _mode = Modes.Attack;
         }
+    }
+
+    public void EndTurn()
+    {
+        ShowActions(false);
+        _selectedUnit.EndTurn();
     }
 
     public void ShowAvailableMoves()
