@@ -125,7 +125,7 @@ public class BattleUI : MonoBehaviour
 
     void DoAttack()
     {
-        _selectedUnit.Attack(_direction);
+        _selectedUnit.Attack(_currentCell.Unit, _direction);
     }
 
     void ShowTerrainType()

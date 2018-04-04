@@ -22,6 +22,7 @@ public class HexGrid : MonoBehaviour
 
     public Int16 Width = 6;
     public Int16 Height = 6;
+    public UnitTeams PlayerTeam = UnitTeams.Teal;
 
     public HexCell CellPrefab;
     public Text CellLabelPrefab;
@@ -427,6 +428,9 @@ public class HexGrid : MonoBehaviour
 
             //Assign team number
             unit.Team = meta.Team;
+            if (PlayerTeam != meta.Team)
+                unit.ActPhase = ActPhase.Wait;
+
             var teamNumber = unit.transform.Find("TeamNumber");
             var sprites = teamNumber.GetComponent<TeamNumber>().NumberSprites;
             teamNumber.GetComponent<SpriteRenderer>().sprite = sprites[meta.SpriteIdx];

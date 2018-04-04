@@ -8,8 +8,23 @@ public class HexUnit : MonoBehaviour {
     private Animator _animator;
     private List<HexCell> _pathToTravel;
     private HexCell _location;
+    private HexDirection _direction;
     private const float _travelSpeed = 4f;
     private String _currentAnimation = AnimationSet.IDLE;
+    public ActPhase ActPhase { get; set; }
+    public HexUnit _enemy;
+
+    public void SetEnemy(HexUnit enemy)
+    {
+        _enemy = enemy;
+    }
+
+    public Boolean CanCounter {
+        get
+        {
+            return _enemy && ActPhase == ActPhase.Wait && _enemy.Location.Coordinates.DistanceTo(Location.Coordinates) <= AttackRange;
+        }
+    }
 
     public Texture2D CursorTexture;
 
@@ -54,10 +69,12 @@ public class HexUnit : MonoBehaviour {
 
     public void Travel(List<HexCell> path)
     {
+        ActPhase = ActPhase.Walk;
         Location = path[path.Count - 1];
         _pathToTravel = path;
         StopAllCoroutines();
         StartCoroutine(TravelPath());
+        ActPhase = ActPhase.WaitForCommand;
     }
 
     public void ValidateLocation()
@@ -67,6 +84,7 @@ public class HexUnit : MonoBehaviour {
 
     private void Awake()
     {
+        ActPhase = ActPhase.WaitForCommand;
         _animator = GetComponent<Animator>();    
     }
 
@@ -117,11 +135,15 @@ public class HexUnit : MonoBehaviour {
 
     public void Rotate(HexDirection direction)
     {
+        _direction = direction;
        SetAnimation(String.Format("{0}{1}", AnimationSet.WALK, direction.GetName()));
     }
 
-    public void Attack(HexDirection direction)
+    public void Attack(HexUnit enemy, HexDirection direction)
     {
+        ActPhase = ActPhase.Attack;
+        SetEnemy(enemy);
+        enemy.SetEnemy(this);
         _animator.SetBool(String.Format("{0}{1}", AnimationSet.WALK, direction.GetName()), false);
         _animator.SetTrigger(String.Format("{0}{1}", AnimationSet.ATTACK, direction.GetName()));
     }
@@ -190,5 +212,14 @@ public class HexUnit : MonoBehaviour {
     public Boolean CanAttack(HexCell targetCell)
     {
         return _availableMoves.ContainsKey(targetCell) && _availableMoves[targetCell].CanAttack;
+    }
+
+    public void OnAttackEnd()
+    {
+        if (_enemy != null && _enemy.CanCounter)
+        {
+            _enemy.Attack(this, _direction.Opposite());
+            ActPhase = ActPhase.EndTurn;
+        }   
     }
 }
