@@ -34,7 +34,7 @@ public class HexUnit : MonoBehaviour {
         }
         set
         {
-            _animator.SetBool("IsActive", value == ActPhase.WaitForCommand);
+            _animator.SetBool(AnimationSet.IS_ACTIVE, value == ActPhase.WaitForCommand);
             _actPhase = value;
         }
     }
@@ -154,11 +154,15 @@ public class HexUnit : MonoBehaviour {
 
     public void Attack(HexUnit enemy, HexDirection direction)
     {
-        ActPhase = ActPhase.Attack;
         SetEnemy(enemy);
         enemy.SetEnemy(this);
         _animator.SetBool(String.Format("{0}{1}", AnimationSet.WALK, direction.GetName()), false);
         _animator.SetTrigger(String.Format("{0}{1}", AnimationSet.ATTACK, direction.GetName()));
+    }
+
+    public void TakeDamage()
+    {
+        _animator.SetTrigger(AnimationSet.TAKE_DAMAGE);
     }
 
     public void EndTurn()
@@ -214,10 +218,21 @@ public class HexUnit : MonoBehaviour {
 
     void OnAttackEnd()
     {
-        if (_enemy != null && _enemy.CanCounter)
+        if(_enemy)
         {
-            _enemy.Attack(this, _direction.Opposite());
-            ActPhase = ActPhase.EndTurn;
+            _enemy.TakeDamage();
+        }
+    }
+
+    void OnTakeDamageEnd()
+    {
+        if (_enemy != null && CanCounter)
+        {
+            Attack(_enemy, _direction.Opposite());
+        }
+        else
+        {
+            EndTurn();
         }
     }
 
