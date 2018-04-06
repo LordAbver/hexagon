@@ -68,18 +68,18 @@ public class HexCell : MonoBehaviour
         set
         {
             if (value != null && value.Count > 0)
-                _terrainType = HexTerrainTypes.ROAD;
+                _terrainType = HexTerrainTypes.Road;
 
             _roads = value;
         }
     }
 
-    private String _terrainType;
-    public String TerrainType
+    private HexTerrainTypes _terrainType;
+    public HexTerrainTypes TerrainType
     {
         get
         {
-            return _terrainType ?? HexTerrainTypes.FLAT;
+            return _terrainType;
         }
         set
         {
@@ -128,6 +128,7 @@ public class HexCell : MonoBehaviour
 
     public HexCell()
     {
+        _terrainType = HexTerrainTypes.Flat;
         _cellID = Guid.NewGuid();
     }
 

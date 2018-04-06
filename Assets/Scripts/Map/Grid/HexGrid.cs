@@ -78,11 +78,11 @@ public class HexGrid : MonoBehaviour
         cell.Color = DefaultColor;
 
         if (_lakes.Contains(coords))
-            cell.TerrainType = HexTerrainTypes.LAKE;
+            cell.TerrainType = HexTerrainTypes.Lake;
         else if (_hills.Contains(coords))
-            cell.TerrainType = HexTerrainTypes.HILL;
+            cell.TerrainType = HexTerrainTypes.Hill;
         else if (_forest.Contains(coords))
-            cell.TerrainType = HexTerrainTypes.FOREST;
+            cell.TerrainType = HexTerrainTypes.Forest;
 
         if (_units.ContainsKey(coords))
             AddUnit(cell, _units[coords]);
@@ -233,7 +233,7 @@ public class HexGrid : MonoBehaviour
                 HexCell neighbor = current.GetNeighbor(d);
 
                 if (neighbor == null || neighbor.SearchPhase > _searchFrontierPhase) continue;
-                if (neighbor.TerrainType == HexTerrainTypes.LAKE || (neighbor.Unit && neighbor.Unit.Team == fromCell.Unit.Team)) continue;
+                if (neighbor.TerrainType == HexTerrainTypes.Lake || (neighbor.Unit && neighbor.Unit.Team == fromCell.Unit.Team)) continue;
 
                 Int32 moveCost = 0;
 
@@ -245,16 +245,16 @@ public class HexGrid : MonoBehaviour
                 {
                     switch (neighbor.TerrainType)
                     {
-                        case HexTerrainTypes.FLAT:
+                        case HexTerrainTypes.Flat:
                             moveCost += 5;
                             break;
-                        case HexTerrainTypes.HILL:
+                        case HexTerrainTypes.Hill:
                             moveCost += 10;
                             break;
-                        case HexTerrainTypes.FOREST:
+                        case HexTerrainTypes.Forest:
                             moveCost += 7;
                             break;
-                        case HexTerrainTypes.ROAD:
+                        case HexTerrainTypes.Road:
                             moveCost += 5;
                             break;
                         default:
@@ -466,10 +466,12 @@ public class HexGrid : MonoBehaviour
     private void LoadHills()
     {
         _hills = new HashSet<HexCoordinates>() {
+            new HexCoordinates(5, 2),
             new HexCoordinates(5, 3),
-            new HexCoordinates(5, 4),
+            new HexCoordinates(6, 2),
             new HexCoordinates(6, 3),
-            new HexCoordinates(6, 4)
+            new HexCoordinates(4, 3),
+
         };
     }
 
@@ -488,10 +490,10 @@ public class HexGrid : MonoBehaviour
         {
             { new HexCoordinates(2, 4), new HashSet<HexDirection>() { HexDirection.NE } },
             { new HexCoordinates(2, 5), new HashSet<HexDirection>() { HexDirection.NE, HexDirection.SW } },
-            { new HexCoordinates(2, 6), new HashSet<HexDirection>() { HexDirection.NW, HexDirection.SW } },
-            { new HexCoordinates(1, 7), new HashSet<HexDirection>() { HexDirection.SE, HexDirection.NE } },
-            { new HexCoordinates(1, 8), new HashSet<HexDirection>() { HexDirection.SW, HexDirection.NW } },
-            { new HexCoordinates(0, 9), new HashSet<HexDirection>() { HexDirection.SE, HexDirection.NE } }
+            { new HexCoordinates(1, 6), new HashSet<HexDirection>() { HexDirection.SE, HexDirection.NE } },
+            { new HexCoordinates(1, 7), new HashSet<HexDirection>() { HexDirection.SW, HexDirection.NW } },
+            { new HexCoordinates(0, 8), new HashSet<HexDirection>() { HexDirection.SE, HexDirection.NE } },
+            { new HexCoordinates(0, 9), new HashSet<HexDirection>() { HexDirection.SW} }
         };
     }
 }

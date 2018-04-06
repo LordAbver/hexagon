@@ -244,7 +244,7 @@ public class HexUnit : MonoBehaviour {
 
     public bool IsValidDestination(HexCell cell)
     {
-        return cell.TerrainType != HexTerrainTypes.LAKE && !cell.Unit;
+        return cell.TerrainType != HexTerrainTypes.Lake && !cell.Unit;
     }
 
     public Boolean CanReach(HexCell targetCell)

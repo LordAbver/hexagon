@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class BattleUI : MonoBehaviour
@@ -10,12 +11,15 @@ public class BattleUI : MonoBehaviour
     private enum Modes { Default, Move, Attack };
     private Modes _mode = Modes.Default;
     private HexDirection _direction;
+    private Transform _unitActions;
+    private Transform _terrainPreview;
 
     public HexGrid grid;
 
     void Awake()
     {
-
+        _unitActions = transform.Find("Actions");
+        _terrainPreview = transform.Find("TerrainPreview");
     }
 
     void Update()
@@ -132,14 +136,22 @@ public class BattleUI : MonoBehaviour
 
     void ShowTerrainType()
     {
-        //if(_currentCell)
-            //Debug.Log("Terrain type: " + _currentCell.TerrainType);
+        if (_currentCell)
+        {
+            //Update text
+            var text = _terrainPreview.Find("Name");
+            text.gameObject.GetComponent<Text>().text = _currentCell.TerrainType.GetName();
+
+            //Update img
+            var img = _terrainPreview.Find("Preview");
+            var sprites = _terrainPreview.GetComponent<TerrainPreview>().TerrainSprites;
+            img.gameObject.GetComponent<Image>().sprite = sprites[(Int32)_currentCell.TerrainType];
+        }
     }
 
     private void ShowActions(Boolean enable)
     {
-        var ui = transform.Find("Actions");
-        ui.gameObject.SetActive(enable);
+        _unitActions.gameObject.SetActive(enable);
 
         if (_selectedUnit.AvailabeAttacks == null)
             _selectedUnit.AvailabeAttacks = grid.GetAvailableAttacks(grid.SelectedCell, _selectedUnit.AttackRange);
@@ -149,8 +161,7 @@ public class BattleUI : MonoBehaviour
 
     private void EnableOption(String option, Boolean enable)
     {
-        var ui = transform.Find("Actions");
-        ui.Find(option).gameObject.SetActive(enable);
+        _unitActions.Find(option).gameObject.SetActive(enable);
     }
 
     public void ShowAvailableAttacks()

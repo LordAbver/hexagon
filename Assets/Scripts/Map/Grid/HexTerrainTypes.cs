@@ -1,9 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
 
-public struct HexTerrainTypes{
-    public const String FLAT = "Flat";
-    public const String HILL = "Hill";
-    public const String LAKE = "Lake";
-    public const String ROAD = "Road";
-    public const String FOREST = "FOREST";
+public enum HexTerrainTypes
+{
+    Flat = 2,
+    Hill = 4,
+    Lake = 5,
+    Road = 7,
+    Forest = 3
+}
+
+public static class HexTerrainExtentions{
+    public static String GetName(this HexTerrainTypes type)
+    {
+        switch (type)
+        {
+            case HexTerrainTypes.Flat:
+                return "Flat";
+            case HexTerrainTypes.Hill:
+                return "Hill";
+            case HexTerrainTypes.Lake:
+                return "Lake";
+            case HexTerrainTypes.Road:
+                return "Road";
+            case HexTerrainTypes.Forest:
+                return "Forest";
+            default:
+                return "Flat";
+        }
+    }
+
 }
