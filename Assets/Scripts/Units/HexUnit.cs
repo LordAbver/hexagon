@@ -44,6 +44,7 @@ public class HexUnit : MonoBehaviour {
     public Int32 Speed;
     public Int32 AttackRange;
     public UnitTeams Team { get; set; }
+    public Boolean IsBusy { get; set; }
 
     private Dictionary<HexCell, PathSearchResult> _availableMoves;
     public Dictionary<HexCell, PathSearchResult> AvailableMoves

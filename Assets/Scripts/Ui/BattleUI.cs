@@ -29,7 +29,7 @@ public class BattleUI : MonoBehaviour
             if(_selectedUnit && _mode == Modes.Move)
                 DoMove();
 
-            if (_mode == Modes.Attack && _currentCell.HasEnemyUnit(_selectedUnit.Team))
+            if (_mode == Modes.Attack && !_selectedUnit.IsBusy && _currentCell.HasEnemyUnit(_selectedUnit.Team))
                 DoAttack();
             else
                 DoSelection();
@@ -130,6 +130,7 @@ public class BattleUI : MonoBehaviour
 
     void DoAttack()
     {
+        _selectedUnit.IsBusy = true;
         _selectedUnit.Attack(_currentCell.Unit, _direction);
         ShowActions(false);
     }
