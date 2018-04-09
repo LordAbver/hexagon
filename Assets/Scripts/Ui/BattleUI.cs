@@ -15,6 +15,7 @@ public class BattleUI : MonoBehaviour
     private Transform _terrainPreview;
 
     public HexGrid grid;
+    public Texture2D CursorTexture;
 
     void Awake()
     {
@@ -29,7 +30,7 @@ public class BattleUI : MonoBehaviour
             if(_selectedUnit && _mode == Modes.Move)
                 DoMove();
 
-            if (_mode == Modes.Attack && !_selectedUnit.IsBusy && _currentCell.HasEnemyUnit(_selectedUnit.Team))
+            if (_mode == Modes.Attack && _selectedUnit.ActPhase == ActPhase.WaitForCommand && _currentCell.HasEnemyUnit(_selectedUnit.Team))
                 DoAttack();
             else
                 DoSelection();
@@ -72,7 +73,12 @@ public class BattleUI : MonoBehaviour
                 _direction = grid.SelectedCell.Coordinates.GetRelatedDirection(_currentCell.Coordinates);
                 _selectedUnit.Rotate(_direction);
             }
-               
+
+            Cursor.SetCursor(CursorTexture, Vector2.zero, CursorMode.Auto);
+        }
+        else
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
     }
 
@@ -130,8 +136,8 @@ public class BattleUI : MonoBehaviour
 
     void DoAttack()
     {
-        _selectedUnit.IsBusy = true;
-        _selectedUnit.Attack(_currentCell.Unit, _direction);
+        _mode = Modes.Default;
+        _selectedUnit.Attack(_currentCell.Unit, _direction, 982);
         ShowActions(false);
     }
 
@@ -145,7 +151,7 @@ public class BattleUI : MonoBehaviour
 
             //Update img
             var img = _terrainPreview.Find("Preview");
-            var sprites = _terrainPreview.GetComponent<TerrainPreview>().TerrainSprites;
+            var sprites = GridResources.TerrainSprites;
             img.gameObject.GetComponent<Image>().sprite = sprites[(Int32)_currentCell.TerrainType];
         }
     }

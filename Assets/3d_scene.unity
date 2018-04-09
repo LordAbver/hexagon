@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 938259981}
+  CursorTexture: {fileID: 2800000, guid: 233c8211eff781041a4095b71484013f, type: 3}
 --- !u!114 &92669025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,7 +580,6 @@ GameObject:
   - component: {fileID: 550172282}
   - component: {fileID: 550172281}
   - component: {fileID: 550172280}
-  - component: {fileID: 550172283}
   m_Layer: 5
   m_Name: TerrainPreview
   m_TagString: Untagged
@@ -652,18 +652,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 550172278}
---- !u!114 &550172283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 550172278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d518424ba08e62a46942cdb9ebf956d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TerrainSprites: []
 --- !u!1001 &657637407
 Prefab:
   m_ObjectHideFlags: 0

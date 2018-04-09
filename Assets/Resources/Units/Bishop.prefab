@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4033017316759416}
   - component: {fileID: 212691984872024964}
-  - component: {fileID: 114659245871976646}
   m_Layer: 0
   m_Name: TeamNumber
   m_TagString: Untagged
@@ -43,7 +42,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1478287656809002
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +73,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1648353115332998
 GameObject:
   m_ObjectHideFlags: 1
@@ -90,7 +89,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1669040129995526
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,22 +248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62aeec286ff125478435ee90f30a06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 0}
-  CursorTexture: {fileID: 2800000, guid: 233c8211eff781041a4095b71484013f, type: 3}
   Speed: 10
   AttackRange: 1
---- !u!114 &114659245871976646
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1303451488409570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 901e91723c7834b498b7d03ad29ae25d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberSprites: []
 --- !u!212 &212419412918388986
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -387,7 +372,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300018, guid: 6d1de4637891e194d92716c807db48a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d1de4637891e194d92716c807db48a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0

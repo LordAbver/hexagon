@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using System.Collections.Generic;
 
 public class HexGrid : MonoBehaviour
@@ -32,6 +31,7 @@ public class HexGrid : MonoBehaviour
 
     void Awake()
     {
+        GridResources.LoadAll();
         _gridCanvas = GetComponentInChildren<Canvas>();
         _hexMesh = GetComponentInChildren<HexMesh>();
 
@@ -434,7 +434,7 @@ public class HexGrid : MonoBehaviour
                 unit.ActPhase = ActPhase.Wait;
 
             var teamNumber = unit.transform.Find("TeamNumber");
-            var sprites = teamNumber.GetComponent<TeamNumber>().NumberSprites;
+            var sprites = GridResources.TeamNumberSprites;
             teamNumber.GetComponent<SpriteRenderer>().sprite = sprites[meta.SpriteIdx];
 
             unit.transform.SetParent(gameObject.transform, false);

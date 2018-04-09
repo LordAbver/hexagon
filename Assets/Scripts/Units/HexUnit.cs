@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ public class HexUnit : MonoBehaviour {
     private HexDirection _direction;
     private const float _travelSpeed = 4f;
     private String _currentAnimation = AnimationSet.IDLE;
-    public HexUnit _enemy;
+    private HexUnit _enemy;
 
     public void SetEnemy(HexUnit enemy)
     {
@@ -39,12 +38,9 @@ public class HexUnit : MonoBehaviour {
         }
     }
 
-    public Texture2D CursorTexture;
-
     public Int32 Speed;
     public Int32 AttackRange;
     public UnitTeams Team { get; set; }
-    public Boolean IsBusy { get; set; }
 
     private Dictionary<HexCell, PathSearchResult> _availableMoves;
     public Dictionary<HexCell, PathSearchResult> AvailableMoves
@@ -147,15 +143,31 @@ public class HexUnit : MonoBehaviour {
         _pathToTravel = null;
     }
 
+    public void Damage(Int32 hp)
+    {
+        var hpBar = transform.Find("Hp");
+        var chars = new List<Char> (hp.ToString());
+        chars.Reverse();
+        var sprites = GridResources.HpNumberSprites;
+        for(var i = 0; i < chars.Count; i++)
+        {
+            var cur = Convert.ToInt16(chars[i].ToString());
+            var img = hpBar.GetChild(i).GetComponent<SpriteRenderer>();
+            img.sprite = sprites[cur];
+            hpBar.GetChild(i).gameObject.SetActive(true);
+        }
+    }
+
     public void Rotate(HexDirection direction)
     {
         _direction = direction;
        SetAnimation(String.Format("{0}{1}", AnimationSet.WALK, direction.GetName()));
     }
 
-    public void Attack(HexUnit enemy, HexDirection direction)
+    public void Attack(HexUnit enemy, HexDirection direction, Int32 dmg)
     {
         SetEnemy(enemy);
+        enemy.Damage(dmg);
         enemy.SetEnemy(this);
         _animator.SetBool(String.Format("{0}{1}", AnimationSet.WALK, direction.GetName()), false);
         _animator.SetTrigger(String.Format("{0}{1}", AnimationSet.ATTACK, direction.GetName()));
@@ -209,12 +221,12 @@ public class HexUnit : MonoBehaviour {
 
     void OnMouseEnter()
     {
-        Cursor.SetCursor(CursorTexture,Vector2.zero, CursorMode.Auto);
+        //Debug.Log(_actPhase);
     }
 
     void OnMouseExit()
     {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        //
     }
 
     void OnAttackEnd()
@@ -229,7 +241,7 @@ public class HexUnit : MonoBehaviour {
     {
         if (_enemy != null && CanCounter)
         {
-            Attack(_enemy, _direction.Opposite());
+            Attack(_enemy, _direction.Opposite(), 105);
         }
         else
         {
