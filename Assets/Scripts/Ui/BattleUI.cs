@@ -137,7 +137,7 @@ public class BattleUI : MonoBehaviour
     void DoAttack()
     {
         _mode = Modes.Default;
-        _selectedUnit.Attack(_currentCell.Unit, _direction, 982);
+        _selectedUnit.Attack(_currentCell.Unit, _direction, 98);
         ShowActions(false);
     }
 

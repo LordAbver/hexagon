@@ -190,6 +190,18 @@ public class HexUnit : MonoBehaviour {
         _animator.Play(AnimationSet.IDLE);
     }
 
+    private void ResetHpBar()
+    {
+        var hpBar = transform.Find("Hp");
+        var sprites = GridResources.HpNumberSprites;
+        for (var i = 0; i < hpBar.childCount; i++)
+        {
+            var img = hpBar.GetChild(i).GetComponent<SpriteRenderer>();
+            img.sprite = sprites[0];
+            hpBar.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
     private void SetAnimation(String animation)
     {
         if (_currentAnimation == animation) return;
@@ -247,6 +259,11 @@ public class HexUnit : MonoBehaviour {
         {
             EndTurn();
         }
+    }
+
+    void OnHpBarChange()
+    {
+        ResetHpBar();
     }
 
     public void Die()
