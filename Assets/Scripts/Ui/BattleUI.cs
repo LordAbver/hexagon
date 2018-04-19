@@ -13,6 +13,7 @@ public class BattleUI : MonoBehaviour
     private HexDirection _direction;
     private Transform _unitActions;
     private Transform _terrainPreview;
+    private Transform _actionPhase;
 
     public HexGrid grid;
     public Texture2D CursorTexture;
@@ -21,6 +22,7 @@ public class BattleUI : MonoBehaviour
     {
         _unitActions = transform.Find("Actions");
         _terrainPreview = transform.Find("TerrainPreview");
+        _actionPhase = transform.Find("ActionPhase");
     }
 
     void Update()
@@ -190,5 +192,10 @@ public class BattleUI : MonoBehaviour
     {
         grid.ShowAllAvailableMoves(grid.SelectedCell, _selectedUnit.Speed, _selectedUnit.AttackRange);
         _mode = Modes.Move;
+    }
+
+    public void OnActionPhaseAnimationEnd()
+    {
+        _actionPhase.gameObject.SetActive(false);
     }
 }
